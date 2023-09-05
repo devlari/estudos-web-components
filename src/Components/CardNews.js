@@ -16,30 +16,27 @@ class Cardnews extends HTMLElement {
   build() {
     const componentRoot = document.createElement("div");
     const cardLeft = document.createElement("div");
-    const cardRight = document.createElement("div");
+
+    componentRoot.setAttribute("class", "card");
+    componentRoot.setAttribute("class", "card__left");
+    componentRoot.setAttribute("class", "card__right");
 
     componentRoot.appendChild(cardLeft);
     componentRoot.appendChild(cardRight);
 
-    componentRoot.classList.add("card-news");
+    const autor = document.createElement("span");
+    const linkNoticia = document.createElement("a");
+    const conteudoNoticia = document.createElement("p");
 
-    const img = document.createElement("img");
-    img.src = this.getAttribute("img");
+    cardLeft.appendChild(autor);
+    cardLeft.appendChild(linkNoticia);
+    cardLeft.appendChild(conteudoNoticia);
 
-    const title = document.createElement("h1");
-    title.textContent = this.getAttribute("title");
+    const cardRight = document.createElement("div");
+    cardRight.setAttribute("class", "card__right");
 
-    const description = document.createElement("p");
-    description.textContent = this.getAttribute("description");
-
-    const link = document.createElement("a");
-    link.textContent = "Leia mais";
-    link.href = this.getAttribute("link");
-
-    componentRoot.appendChild(img);
-    componentRoot.appendChild(title);
-    componentRoot.appendChild(description);
-    componentRoot.appendChild(link);
+    const imagemNoticia = document.createElement("img");
+    cardRight.appendChild(imagemNoticia);
 
     return componentRoot;
   }
