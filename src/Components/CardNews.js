@@ -25,6 +25,8 @@ class Cardnews extends HTMLElement {
     componentRoot.appendChild(cardRight);
 
     const autor = document.createElement("span");
+    autor.textContent = "By " + this.getAttribute("autor");
+
     const linkNoticia = document.createElement("a");
     const conteudoNoticia = document.createElement("p");
 
