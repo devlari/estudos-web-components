@@ -16,10 +16,11 @@ class Cardnews extends HTMLElement {
   build() {
     const componentRoot = document.createElement("div");
     const cardLeft = document.createElement("div");
+    const cardRight = document.createElement("div");
 
     componentRoot.setAttribute("class", "card");
-    componentRoot.setAttribute("class", "card__left");
-    componentRoot.setAttribute("class", "card__right");
+    cardLeft.setAttribute("class", "card__left");
+    cardRight.setAttribute("class", "card__right");
 
     const autor = document.createElement("span");
     autor.textContent = "By " + (this.getAttribute("autor") || "Autor");
@@ -36,9 +37,6 @@ class Cardnews extends HTMLElement {
     cardLeft.appendChild(linkNoticia);
     cardLeft.appendChild(conteudoNoticia);
 
-    const cardRight = document.createElement("div");
-    cardRight.setAttribute("class", "card__right");
-
     const imagemNoticia = document.createElement("img");
     imagemNoticia.setAttribute("src", this.getAttribute("imagem") || "#");
 
@@ -51,7 +49,57 @@ class Cardnews extends HTMLElement {
   }
 
   // Estilizar o componente
-  styles() {}
+  styles() {
+    const style = document.createElement("style");
+
+    style.textContent = `
+      .card {
+          width: 720px;
+          height: 210px;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          padding: 20px 10px;
+          margin-bottom: 20px;
+          margin-left: 20px;
+      }
+
+      .card__left {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-left: 10px;
+      }
+
+
+      .card__left > a {
+          margin-top: 15px;
+          font-size: 25px;
+          font-weight: 700;
+          color: #000;
+          text-decoration: none;
+      }
+
+      .card__left > p {
+          color: grey;
+      }
+
+      .card__left > span {
+          font-weight: 400;
+      }
+
+      .card__right img {
+          width: 200px;
+          height: 200px;
+      }    
+    `;
+
+    return style;
+  }
 }
 
 // registrando o componente no customElements do DOM

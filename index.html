@@ -11,32 +11,26 @@
   </head>
   <body>
     <div class="container">
-      <div class="card">
-        <div class="card__left">
-          <span>by Larissa</span>
-          <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-            neque eaque nesciunt molestias id nam saepe quis, veniam
-            reprehenderit eius consequuntur minima tenetur maxime a rem, iure
-            mollitia perspiciatis laborum itaque perferendis unde ab nostrum!
-          </p>
-        </div>
-        <div class="card__right">
-          <img src="assets/leao.jpg" alt="Leão" />
-        </div>
-      </div>
+      <titulo-dinamico
+        titulo="Lembre-se se o atributo defer está sendo colocada no seu script! :D"
+      ></titulo-dinamico>
+
       <card-news
         autor="Larissa"
         titulo="Título dinâmico"
-        conteudo="Texto dinâmico para o conteúdo do card news dinâmico :D"
+        conteudo="Texto dinâmico para o conteúdo do card news dinâmico que por sua vez é um componente dinâmico! :D"
         link="https://www.google.com.br"
         imagem="assets/leao.jpg"
       >
       </card-news>
-      <titulo-dinamico
-        titulo="Lembre-se se o atributo defer está sendo colocada no seu script! :D"
-      ></titulo-dinamico>
+      <card-news
+        autor="Larissa"
+        titulo="Título dinâmico"
+        conteudo="Texto dinâmico para o conteúdo do card news dinâmico que por sua vez é um componente dinâmico! :D"
+        link="https://www.google.com.br"
+        imagem="assets/leao.jpg"
+      >
+      </card-news>
     </div>
   </body>
 </html>
