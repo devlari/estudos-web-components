@@ -21,14 +21,16 @@ class Cardnews extends HTMLElement {
     componentRoot.setAttribute("class", "card__left");
     componentRoot.setAttribute("class", "card__right");
 
-    componentRoot.appendChild(cardLeft);
-    componentRoot.appendChild(cardRight);
-
     const autor = document.createElement("span");
-    autor.textContent = "By " + this.getAttribute("autor");
+    autor.textContent = "By " + (this.getAttribute("autor") || "Autor");
 
     const linkNoticia = document.createElement("a");
+    linkNoticia.textContent = this.getAttribute("titulo") || "Carregando...";
+    linkNoticia.setAttribute("href", this.getAttribute("link") || "#");
+
     const conteudoNoticia = document.createElement("p");
+    conteudoNoticia.textContent =
+      this.getAttribute("conteudo") || "Carregando...";
 
     cardLeft.appendChild(autor);
     cardLeft.appendChild(linkNoticia);
@@ -38,7 +40,12 @@ class Cardnews extends HTMLElement {
     cardRight.setAttribute("class", "card__right");
 
     const imagemNoticia = document.createElement("img");
+    imagemNoticia.setAttribute("src", this.getAttribute("imagem") || "#");
+
     cardRight.appendChild(imagemNoticia);
+
+    componentRoot.appendChild(cardLeft);
+    componentRoot.appendChild(cardRight);
 
     return componentRoot;
   }
