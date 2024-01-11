@@ -7,6 +7,7 @@ class Cardnews extends HTMLElement {
     // o shadow DOM é um DOM encapsulado, que não pode ser acessado por fora, e que pode ser estilizado com CSS.
     const shadow = this.attachShadow({ mode: "open" });
 
+    //teste
     // Respeitar a hierarquia usando appendChild
     shadow.appendChild(this.build());
     shadow.appendChild(this.styles());
